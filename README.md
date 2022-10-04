@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+# Vue 3 + Vite + Google OAuth Login 範例
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+這個專案是 Vue 3 與 Google OAuth Login 範例。
 
-## Recommended IDE Setup
+專案使用 Vite 初始化建立 Vue 3，並使用 [vue3-google-login](https://github.com/yobaji/vue3-google-login/) 來串接 Google OAuth 登入。
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+詳細安裝與範例說明可以參考 [Vue3 串接 Google OAuth 登入 【2022 最新】](https://ithelp.ithome.com.tw/articles/10304289)
