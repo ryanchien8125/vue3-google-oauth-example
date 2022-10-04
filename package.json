@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",
-    "vite": "^3.1.0"
+    "vite": "^3.1.0",
+    "vue3-google-login": "^2.0.12"
   }
 }
