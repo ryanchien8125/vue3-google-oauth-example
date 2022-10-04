@@ -1,9 +1,25 @@
 <script setup>
 import { ref } from 'vue'
+import { googleTokenLogin, googleAuthCodeLogin } from 'vue3-google-login'
+
+const GOOGLE_CLIENT_ID = '這邊放上你的 Google Client ID'
+
 const data = ref()
 
-const callback = (response) => {
-  data.value = response
+const handleGoogleAccessTokenLogin = () => {
+  googleTokenLogin({
+    clientId: GOOGLE_CLIENT_ID
+  }).then((response) => {
+    data.value = response
+  })
+}
+
+const handleGoogleAuthCodeLogin = () => {
+  googleAuthCodeLogin({
+    clientId: GOOGLE_CLIENT_ID
+  }).then((response) => {
+    data.value = response
+  })
 }
 </script>
 
@@ -19,9 +35,21 @@ const callback = (response) => {
     <!-- <GoogleLogin :callback="callback" prompt auto-login/> -->
 
     <!-- 使用 GoogleLogin 並在預設插槽內添加自定義按鈕 -->
-    <GoogleLogin :callback="callback">
+    <!-- <GoogleLogin :callback="callback">
       <button>使用 Google 進行登入</button>
-    </GoogleLogin>
+    </GoogleLogin> -->
+
+    <!-- 使用自定義按鈕登入後回傳 Access Token -->
+    <button
+      type="button"
+      @click="handleGoogleAccessTokenLogin"
+    >使用 Google 進行登入</button>
+
+    <!-- 使用自定義按鈕登入後回傳 Auth Code -->
+    <!-- <button
+      type="button"
+      @click="handleGoogleAuthCodeLogin"
+    >使用 Google 進行登入</button> -->
 
     <p>
       {{ data }}
